@@ -36,7 +36,7 @@ public class CardDeliveryOrderTest {
         form.$("[data-test-id=date] input").doubleClick();
         form.$("[data-test-id=date] input").sendKeys(Keys.DELETE);
         form.$("[data-test-id=date] input").setValue(deliveryDate(3));
-        form.$("[data-test-id=name] input").setValue("Ольга Белянко");
+        form.$("[data-test-id=name] input").setValue("Белянко Ольга");
         form.$("[data-test-id=phone] input").setValue("+79211111111");
         form.$("[data-test-id=agreement] .checkbox__box").click();
         form.$("[role=button] .button__content").click();
