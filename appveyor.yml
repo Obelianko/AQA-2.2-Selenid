@@ -15,6 +15,6 @@ install:
 
 build_script:
   - chmod +x gradlew
-  - ./gradlew test -Dselenid.headless=true--info  # запускаем тест, флаг --info позволяет выводить больше информации
+  - ./gradlew test -Dselenide.headless=true --info  # запускаем тест, флаг --info позволяет выводить больше информации
 
 
