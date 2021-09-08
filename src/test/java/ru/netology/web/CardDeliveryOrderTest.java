@@ -11,16 +11,11 @@ import java.time.format.DateTimeFormatter;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class CardDeliveryOrderTest {
-    private String deliveryDate(int plusDays) {
-        LocalDate localDate = LocalDate.now();
-        LocalDate deliveryDate = localDate.plusDays(plusDays);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String dateText = deliveryDate.format(formatter);
-        return dateText;
+    String deliveryDate(int plusDays) {
+        return LocalDate.now().plusDays(plusDays).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
 
@@ -30,7 +25,7 @@ public class CardDeliveryOrderTest {
     }
 
     @Test
-    public void requestForDelivery() {
+    public void deliveryRequest() {
         SelenideElement form = $("[method=post]");
         form.$("[data-test-id=city] input").setValue("Санкт-Петербург");
         form.$("[data-test-id=date] input").doubleClick();
